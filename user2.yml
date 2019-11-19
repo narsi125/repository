@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+   - user:
+       name: test
+       state: present

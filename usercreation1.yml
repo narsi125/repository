@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   user: root
+   tasks:
+    - user:
+        name: narsi
+        state: present
+        comment: "test id"
+        password: $1$pyUme6Ky$pej4ZemR9.Ej4ZyVSV8WV1
+        uid: 10125
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa

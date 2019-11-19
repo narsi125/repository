@@ -1,0 +1,7 @@
+---
+- hosts: 10.80.1.162
+  tasks:
+  - hostname:
+      name: testzensar
+  - shell: 
+     cmd: ls -ltr

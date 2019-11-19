@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+  - role: PrabhuVignesh.push_to_deploy

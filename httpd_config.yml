@@ -1,0 +1,17 @@
+---
+- hosts: lxadm01
+  tasks:
+   - name: Install httpd package
+     yum:
+      name: httpd
+      state: present
+   - name: Copy file to destination
+     copy:
+      src: /root/index.html
+      dest: /var/www/html/
+     notify:
+      - Start sshd service
+
+  handlers:
+   - name: Start sshd service
+     service: name=httpd state=started

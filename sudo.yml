@@ -1,0 +1,13 @@
+---
+- hosts: all
+  vars:
+    host_key_checking: False
+  tasks:
+  - name: add rapid7 scanning to sudoers
+    blockinfile:
+       block: |
+         ########################################################
+         #Added for Rapid7 Scanning
+         amer.svc.s_rapid7 ALL=(ALL)NOPASSWD:/usr/sbin/ifconfig, /usr/bin/java, /usr/bin/sha1sum, /usr/bin/md5sum, /usr/bin/md5, /usr/bin/sha1, /usr/bin/awk, /usr/bin/grep, /usr/bin/egrep, /usr/bin/cut, /usr/bin/id, /usr/bin/ls, /usr/bin/cat /etc/ssh/sshd_config, /usr/bin/cat /etc/group, /usr/bin/cat /etc/passwd, /usr/bin/cat /boot/grub/grub.conf, /usr/bin/cat /boot/grub/menu.lst, /usr/bin/cat /etc/syslog.conf, /usr/bin/cat /etc/rsyslog.conf, /usr/bin/cat /etc/lilo.conf, /usr/bin/cat /etc/permissions, /usr/bin/cat /etc/securetty, /usr/bin/cat /var/log/postgresql, /usr/bin/cat /etc/hosts.equiv, /usr/bin/cat /etc/hosts.equiv /usr/bin/cat /etc/master.password, /usr/bin/cat /etc/*release, /usr/bin/cat /etc/*version, /usr/bin/cat /etc/slp.reg, /usr/bin/cat, /usr/bin/find, /usr/bin/mysqlaccess, /usr/bin/mysqlhotcopy, /usr/bin/sh, /usr/sbin/sysctl, /usr/sbin/dmidecode, /usr/bin/perlsuid, /usr/bin/apt-get, /usr/bin/rpm, /usr/bin/cat /*, /usr/bin/cat /dev/*, /usr/bin/cat /sys/*, /usr/bin/cat /proc/*, /usr/bin/cat /home/*, /usr/bin/cat /var/*, /usr/bin/cat /etc/*, /usr/bin/bash, /bin/bash
+         ########################################################
+       dest: /etc/sudoers

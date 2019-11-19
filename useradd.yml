@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - user:
+     name: test
+     shell: /bin/bash
+     password: $1$9wSckNDy$.jXynhGob24ALno7eKd4I/
+     uid: 10126
+     group: wheel 

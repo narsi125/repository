@@ -1,0 +1,4 @@
+---
+- hosts: lxadm01
+  roles: 
+   - role: web

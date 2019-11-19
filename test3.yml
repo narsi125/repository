@@ -1,0 +1,10 @@
+---
+- hosts: all
+- name: add several users
+  user:
+    name: "{{ item }}"
+    state: present
+    groups: "wheel"
+  with_items:
+    - testuser1
+    - testuser2

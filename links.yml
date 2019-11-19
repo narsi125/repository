@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+   - file:
+      path: /tmp/{{ item.file }}
+      state: touch
+     loop:
+      - { file: x }
+      - { file: z }
+   - file:
+      src: '/tmp/{{ item.src }}'
+      dest: '/tmp/{{ item.dest }}'
+      state: link
+     loop:
+      - { src: x, dest: y }
+      - { src: z, dest: k }
